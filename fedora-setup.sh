@@ -36,6 +36,7 @@ sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https:/
 sudo dnf install 1password -y
 
 # install howdy
+## be sure to run 'sudo howdy add' to setup facial recognition
 sudo dnf copr enable principis/howdy
 sudo dnf --refresh install howdy -y
 
