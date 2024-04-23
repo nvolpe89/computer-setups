@@ -79,5 +79,10 @@ flatpak run --user org.remmina.Remmina
 # sudo apt update
 # sudo apt install howdy
 
+# install nala package manager
+sudo apt install nala -y
+sudo nala fetch
+1 2 3
+
 #reboot system
 sudo shutdown -r now
