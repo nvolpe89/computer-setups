@@ -5,10 +5,10 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # install material shell
-sudo apt install gnome-shell-extension-material-shell -y
+# sudo apt install gnome-shell-extension-material-shell -y
 
 # enable material shell
-gnome-extensions enable material-shell@papyelgringo
+# gnome-extensions enable material-shell@papyelgringo
 
 #######################
 ## INSTALL DEPENDANCIES
@@ -42,8 +42,10 @@ flatpak install flathub org.telegram.desktop -y
 # install flameshot
 flatpak install flathub org.flameshot.Flameshot
 
-# install twilio authy
-snap install authy
+# install ente auth
+wget https://github.com/ente-io/ente/releases/download/auth-v2.0.54/ente-auth-v2.0.54-x86_64.AppImage
+chmod a+x ente-auth-*.AppImage
+./ente-auth-*.AppImage
 
 # install 1password
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
@@ -60,14 +62,22 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list
 sudo apt-get update
 sudo apt-get install tailscale
 
+# install remmina
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# In order to have H.264 codecs
+flatpak install org.freedesktop.Platform
+flatpak install org.freedesktop.Platform.openh264
+flatpak install --user flathub org.remmina.Remmina
+flatpak run --user org.remmina.Remmina
+
 # install cloudflare warp
-sudo apt install cloudflare-warp
+# sudo apt install cloudflare-warp
 
 # install howdy
 ## be sure to run 'sudo howdy add' to setup facial recognition
-sudo add-apt-repository ppa:boltgolt/howdy
-sudo apt update
-sudo apt install howdy
+# sudo add-apt-repository ppa:boltgolt/howdy
+# sudo apt update
+# sudo apt install howdy
 
 #reboot system
 sudo shutdown -r now
